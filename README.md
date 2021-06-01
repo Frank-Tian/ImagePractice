@@ -1,1 +1,1 @@
-# RenderingDemo
+# ImagePractice
