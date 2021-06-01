@@ -14,7 +14,7 @@
 @interface ImageIOViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIView *greenView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
 - (IBAction)encodeAction:(id)sender;
 - (IBAction)decodeAction:(id)sender;
 @end
@@ -28,13 +28,39 @@
 }
 
 - (IBAction)decodeAction:(id)sender {
-    //[self decodeStaticImageByName:@"ocean"];
-    //[self decodeStaticImageByName:@"sky"];
-    [self decodeGIFImageByName:@"band"];
+    [self decodeStaticImageByName:@"ocean"];
+    [self decodeStaticImageByName:@"sky"];
+//    [self decodeGIFImageByName:@"band"];
 }
 
 - (IBAction)encodeAction:(id)sender {
+    CFStringRef imageType = CFSTR("public.jpeg");
+    // 待编码的CGImage
+    CGImageRef imageRef = self.imageView.image.CGImage;
+    // 创建容器
+    CFMutableDataRef imageData = CFDataCreateMutable(NULL, 0);
+    CGImageDestinationRef destination = CGImageDestinationCreateWithData(imageData, imageType, 1, NULL);
+    if (!destination) {
+        // 无法编码，多为目标格式不支持
+    }
+    // 可选元信息，比如EXIF方向
+    CGImagePropertyOrientation exifOrientation = kCGImagePropertyOrientationDown;
+    NSMutableDictionary *frameProperties = [NSMutableDictionary dictionary];
+    NSMutableDictionary *imageProperties = [NSMutableDictionary dictionary];
+    imageProperties[(__bridge_transfer NSString *) kCGImagePropertyExifDictionary] = @(exifOrientation);
+    // 添加图像和元信息
+    CGImageDestinationAddImage(destination, imageRef, (__bridge CFDictionaryRef)frameProperties);
+    if (CGImageDestinationFinalize(destination) == NO) {
+        // 编码失败
+    }
     
+    // 图片数据已经拿到，可以存储等操作，这里做简单展示
+    self.imageView2.image = [UIImage imageWithData:(__bridge NSData * _Nonnull)(imageData)];
+    
+    CFRelease(imageData);
+    CFRelease(imageType);
+    CGImageRelease(imageRef);
+    CFRelease(destination);
 }
 
 - (void)decodeStaticImageByName:(NSString *)name {
