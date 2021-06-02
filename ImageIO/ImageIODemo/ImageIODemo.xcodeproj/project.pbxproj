@@ -20,6 +20,7 @@
 		ABDC9529266687F200B54971 /* ocean.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDC9526266687F200B54971 /* ocean.jpg */; };
 		ABDC952B26668E5000B54971 /* band.gif in Resources */ = {isa = PBXBuildFile; fileRef = ABDC952A26668E5000B54971 /* band.gif */; };
 		ABDC952E2667283E00B54971 /* SupportTypeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC952D2667283E00B54971 /* SupportTypeListViewController.m */; };
+		ABDC9531266730FB00B54971 /* BitmapConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC9530266730FB00B54971 /* BitmapConverterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		ABDC952A26668E5000B54971 /* band.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = band.gif; sourceTree = "<group>"; };
 		ABDC952C2667283E00B54971 /* SupportTypeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportTypeListViewController.h; sourceTree = "<group>"; };
 		ABDC952D2667283E00B54971 /* SupportTypeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupportTypeListViewController.m; sourceTree = "<group>"; };
+		ABDC952F266730FB00B54971 /* BitmapConverterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitmapConverterViewController.h; sourceTree = "<group>"; };
+		ABDC9530266730FB00B54971 /* BitmapConverterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitmapConverterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				ABDC9522266683D000B54971 /* ImageIOViewController.m */,
 				ABDC952C2667283E00B54971 /* SupportTypeListViewController.h */,
 				ABDC952D2667283E00B54971 /* SupportTypeListViewController.m */,
+				ABDC952F266730FB00B54971 /* BitmapConverterViewController.h */,
+				ABDC9530266730FB00B54971 /* BitmapConverterViewController.m */,
 				ABDC95112666602100B54971 /* Main.storyboard */,
 				ABDC95142666602400B54971 /* Assets.xcassets */,
 				ABDC95162666602400B54971 /* LaunchScreen.storyboard */,
@@ -172,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABDC9523266683D000B54971 /* ImageIOViewController.m in Sources */,
+				ABDC9531266730FB00B54971 /* BitmapConverterViewController.m in Sources */,
 				ABDC95102666602100B54971 /* ViewController.m in Sources */,
 				ABDC952E2667283E00B54971 /* SupportTypeListViewController.m in Sources */,
 				ABDC950A2666602100B54971 /* AppDelegate.m in Sources */,

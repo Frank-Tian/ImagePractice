@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"Support Types";
     self.types = [self getSupportTypeItems];
     self.tableView.tableFooterView = [UIView new];
 }
