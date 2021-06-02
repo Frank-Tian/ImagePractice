@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+#use_frameworks!
+
+target 'DownsamplingDemo' do
+ 
+  pod 'SDWebImage'
+  pod 'YYImage'
+  pod 'YYWebImage'
+  pod 'FlyImage'
+  
+end
